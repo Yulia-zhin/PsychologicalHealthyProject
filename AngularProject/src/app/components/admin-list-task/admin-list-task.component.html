@@ -1,0 +1,38 @@
+<ng-template [ngIf]="!finishFlag">
+<div style="margin: 100px 300px;">
+    <h2>Пройденные задания</h2>
+    <table class="table_col">
+        <colgroup>
+            <col style="background:#C7DAF0;">
+        </colgroup>
+        <tr>
+          <th>Название</th>
+          </tr>
+        <tr *ngFor="let p of htaskName">
+            <td>{{p}}</td>
+            </tr>
+        </table> 
+    </div>
+    <input id="buttonId" type="button" value="Пройденные задания" (click)="getFinishTasks()" class="btn btn-success" />	
+    <div style="height: 100px;">
+    </div>		        
+</ng-template>
+<ng-template [ngIf]="finishFlag">
+    <div style="margin: 100px 300px;">
+        <h2>Пройденные задания</h2>
+        <table class="table_col">
+            <colgroup>
+                <col style="background:#C7DAF0;">
+            </colgroup>
+            <tr>
+              <th>Название</th>
+              </tr>
+            <tr *ngFor="let p of htaskName">
+                <td>{{p}}</td>
+                </tr>
+            </table> 
+        </div>
+        <input id="buttonId" type="button" value="Текущие задания" (click)="getCurrentTasks()" class="btn btn-success" />
+        <div style="height: 100px;">
+        </div>			        
+    </ng-template>

@@ -1,0 +1,84 @@
+<div style="height: 80px;"></div>
+<ng-template [ngIf]="showAllHelpTask&&(!showRecomHelpTask)">
+    <input type="button" value="Рекомендованные" (click)="recomendetHelpTask()" class="btn btn-success" />
+    <tr *ngFor="let t of userHelpTask">
+    <blockquote>
+        <p>{{t?.text}}</p>
+        <footer>— <cite>{{t?.description}}</cite></footer>
+      </blockquote>
+      <input type="button" value="подробнее" (click)="showHelpTask(t?.id)"/>
+    </tr>
+<!-- <table class="table table-striped" >
+  
+    <tbody>
+        <input type="button" value="Текущие" (click)="currentHelpTask()" class="btn btn-success" />
+        <input type="button" value="Пройдено" (click)="finishHelpTask()" class="btn btn-success" />
+        <tr *ngFor="let t of userHelpTask">
+            <td>{{t?.id}}</td>
+            <td>{{t?.text}}</td>
+            <td>{{t?.description}}</td>
+            <td>{{t?.taskCategoryId}}</td>
+                <input type="button" value="подробнее" (click)="showHelpTask(t?.id)" class="btn btn-success" />
+        </tr>
+    </tbody>
+</table> -->
+</ng-template>
+<ng-template [ngIf]="showCurrentHelpTask&&(!showAllHelpTask)&&(!showRecomHelpTask)&&(finishCurrentHelpTaskFlag)">
+    <button style="margin-left: 700px;"  class="button-3" (click)="recomendetHelpTask()" > Рекомендации</button>
+    <button class="button-3"  (click)="finishHelpTask()"> Выполненые задания </button>
+
+    <div style=" margin: 20px 50px; font-family: 'Abel', sans-serif; font-size: 22px;">Текущие задания:</div>
+    <p style=" margin-left:500px; font-family: 'Abel', sans-serif; font-size: 20px;">Задание помечано как выполненое</p>
+            <tr *ngFor="let t of userHelpTask">
+                <blockquote>
+                    <p>{{t?.text}}</p>
+                    <footer>— <cite>{{t?.description}}</cite></footer>
+                  
+            <Button style="margin-left: 0; height: 20px;" class="button-3" (click)="finishCurrentHelpTask(t)" >Завершить задание</Button>
+            
+        </blockquote>
+    </tr>
+</ng-template>
+<ng-template [ngIf]="showCurrentHelpTask&&(!showAllHelpTask)&&(!showRecomHelpTask)&&!finishCurrentHelpTaskFlag">
+    <button style="margin-left: 700px;"  class="button-3" (click)="recomendetHelpTask()" > Рекомендации</button>
+    <button class="button-3"  (click)="finishHelpTask()"> Выполненые задания </button>
+
+    <div style=" margin: 20px 50px; font-family: 'Abel', sans-serif; font-size: 22px;">Текущие задания:</div>
+
+            <tr *ngFor="let t of userHelpTask">
+                <blockquote>
+                    <p>{{t?.text}}</p>
+                    <footer>— <cite>{{t?.description}}</cite></footer>
+                  
+            <Button style="margin-left: 0; height: 20px;" class="button-3" (click)="finishCurrentHelpTask(t)" >Завершить задание</Button>
+            
+        </blockquote>
+    </tr>
+</ng-template>
+
+
+<ng-template [ngIf]="showFinishHelpTask&&(!showAllHelpTask)&&(!showRecomHelpTask)">
+    <button style="margin-left: 700px;"  class="button-3" (click)="recomendetHelpTask()" > Рекомендации</button>
+    <button class="button-3"  (click)="currentHelpTask()" > Текущие задания</button>
+
+    <div style="margin: 20px 50px; font-family: 'Abel', sans-serif; font-size: 22px;">Выполненные задания:</div>
+
+            <tr *ngFor="let t of userHelpTask">
+                <blockquote>
+                    <p>{{t?.text}}</p>
+                    <footer>— <cite>{{t?.description}}</cite></footer>
+                  </blockquote>
+            </tr>
+</ng-template>
+
+
+<ng-template [ngIf]="showRecomHelpTask">
+    <button style="margin-left: 700px;" class="button-3"  (click)="currentHelpTask()" > Текущие задания</button>
+    <button class="button-3"  (click)="finishHelpTask()"> Выполненые задания </button>
+    <div style="margin: 20px 50px; font-family: 'Abel', sans-serif; font-size: 22px;">По результатам тестирования вам рекомендуется выполнять задания из следующих категорий:</div>
+            <tr *ngFor="let t of helpTaskCategoryList">
+                <blockquote>
+                    <p>{{t}}</p>
+                </blockquote>                
+            </tr>
+</ng-template>

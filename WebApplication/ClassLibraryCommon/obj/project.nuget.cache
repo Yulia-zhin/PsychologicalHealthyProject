@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "Pp1SNrU757oD4vxp9QF8ocSdms9AkFjXMmh0pohgGDIeSioQ7/nnq6h+abNHncFcmvPN6BPwbyP+WDNgQdalBw==",
+  "success": true,
+  "projectFilePath": "D:\\1STUDY\\4-1\\Coursework_PI\\Coursework\\01_12\\WebApplication\\ClassLibraryCommon\\ClassLibraryCommon.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Julia\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.6.0\\microsoft.identitymodel.jsonwebtokens.6.6.0.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.6.0\\system.identitymodel.tokens.jwt.6.6.0.nupkg.sha512",
+    "C:\\Users\\Julia\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

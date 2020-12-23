@@ -1,0 +1,15 @@
+.MainImageClass{
+    height: 680px;
+width: 1240px;
+margin: 17px;
+opacity: 0.9;
+z-index: 1;
+}
+
+body, div{
+    background-image: url(http://localhost:50096/images/meditationMain.jpg) no-repeat;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+}

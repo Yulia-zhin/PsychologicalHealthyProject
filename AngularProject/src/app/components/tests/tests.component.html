@@ -1,0 +1,37 @@
+<div style="height: 80px;">
+
+</div>
+<div  class="post-wrap">
+	<div *ngFor="let p of tests" class="post-item">
+		<div class="item-content">
+			<div class="item-icon group"></div>
+			<div class="item-body">
+				<h3>{{p?.category}}</h3>
+				<p></p>
+			</div>
+			<div class="item-footer">
+				<a [routerLink]="['questions', p?.id]" class="link"><span style="background-color: white; color: grey;" >Подробнее</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <table class="table table-striped" >
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>Category</td>
+            <td>description</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of tests">
+                <td>{{p?.id}}</td>
+                <td>{{p?.category}}</td>
+                <td>{{p?.description}}</td>
+                <td>
+                    <a [routerLink]="['questions', p?.id]"> перейти</a>
+                </td>
+        </tr>
+    </tbody>
+</table> -->

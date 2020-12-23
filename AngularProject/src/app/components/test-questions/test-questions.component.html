@@ -1,0 +1,28 @@
+<tbody>
+    <div style="height: 80px;"></div>
+    <h2 style="margin-left: 40px;">Для завершения теста нужно ответить на все вопросы</h2>
+    <div style="height: 30px;"></div>
+     <div *ngFor="let q of questions">        
+        <ng-template  [ngIf]="!hideQuestion(q.id)" [ngIfElse]="edit">
+            <ul class="older">
+                <li><a>{{q?.text}}</a></li>
+            </ul>
+            <ol class="rounded">
+            <tr *ngFor="let a of answers">
+                <p *ngIf="q.id==a.testQuestionsId">
+                    <li>
+                        <a>
+                         <button mat-flat-button color="primary"  (click)='clickAnswer(a)'>{{a.text}}</button>
+                        </a>
+                    </li>
+                </p>
+            </tr>
+         </ol>
+        </ng-template>
+    </div>
+                <button class="buttonfinish" *ngIf="showButton()" (click)='getTestResult()'>закончить</button>
+ </tbody>
+
+ <ng-template #edit>
+</ng-template>
+ 

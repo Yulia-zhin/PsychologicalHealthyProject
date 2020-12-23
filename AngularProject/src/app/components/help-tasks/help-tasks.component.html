@@ -1,0 +1,80 @@
+<div style="height: 100px;"></div>
+ <ng-template class=".body" [ngIf]="categoryListFlag"> 
+    <h2 style="margin-left: 50px;"> Выберите подходящую вас категорию заданий: </h2>
+    <br>
+    <div class="tagContainerCategory"  *ngFor="let t of helpTaskCategoryList">
+          <div class="tagContainerCategorInner">
+            <img style="height: 40px; width: 40px;" src="http://localhost:50096/images/penbook2.png">
+            <h3>{{t}}</h3>
+            <div class="Buttoncontainer">
+              <button (click)="showHelpTaskByCategory(t)" class="price-button" >Перейти</button>
+            </div>
+          </div>
+    </div>
+</ng-template> 
+<!-- <ng-template [ngIf]="categoryListFlag">
+<table class="table table-striped" >
+    <h1>all tasks</h1>
+    <tbody>
+        <tr *ngFor="let t of helpTaskCategoryList">
+                <td>{{t}}</td>
+                <input type="button" value="подробнее" (click)="showHelpTaskByCategory(t)" class="btn btn-success" />
+        </tr>
+    </tbody>
+</table>
+</ng-template> -->
+<ng-template [ngIf]="infoCategoryFlag">
+<div class="post-wrap">
+    <div class="divUnsetClass" style="margin: 0px;" *ngFor="let t of helpTask"> 
+        <div style="width: 400px;" class="post-item">
+            <div class="item-content">
+                <div class="item-icon group"></div>
+                <div class="item-body">
+                    <h3>{{t?.text}}</h3>
+                    <p>{{t?.description}}</p>
+                </div>
+                <div class="item-footer">
+                    <a class="link">
+                        <span><input id="InfoButtomClass" type="button" value="подробнее" (click)="showHelpTaskInfo(t?.id)" class="btn btn-success" /></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</ng-template>
+<!-- <ng-template [ngIf]="infoCategoryFlag">
+    <table class="table table-striped" >
+        <tbody>
+            <tr *ngFor="let t of helpTask">
+                <td>{{t?.id}}</td>
+                <td>{{t?.text}}</td>
+                <td>{{t?.description}}</td>
+                <td>{{t?.taskCategoryId}}</td>    
+                <input type="button" value="подробнее" (click)="showHelpTaskInfo(t?.id)" class="btn btn-success" />          
+        </tr>
+        </tbody>
+    </table>
+</ng-template>  [ngIf]="infoIdFlag"!!!!!!!!!!! -->
+<ng-template [ngIf]="infoIdFlag&&!taskAddedFlag" >
+    <div *ngFor="let t of helpTask" >
+    <blockquote > 
+        <p>{{t?.text}}</p>
+        <footer>— <cite>{{t?.description}}</cite></footer>
+      </blockquote>
+            <button (click)="saveHelpTask(t)" class="btn">Добавить в список моих заданий</button>
+    </div>
+    <div style="height: 50px;"> 
+    </div>
+</ng-template>
+<ng-template [ngIf]="taskAddedFlag" >
+    <div *ngFor="let t of helpTask" >
+    <blockquote > 
+        <p>{{t?.text}}</p>
+        <footer>— <cite>{{t?.description}}</cite></footer>
+      </blockquote>
+      <button class="btn">Задание добавлено</button>
+    </div>
+    <div style="height: 50px;"> 
+    </div>
+</ng-template>

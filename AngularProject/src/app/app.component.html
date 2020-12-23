@@ -1,0 +1,132 @@
+<html class="htmlClass">
+<body>
+  <meta name="viewport" content="width=1024, initial-scale=1">
+<div id="Navigation">
+    <ul class="Navigation">
+      <li><a [routerLink]="['/home']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Главная</a></li>
+      <li><a>Тесты</a>
+        <ul>
+            <li><a [routerLink]="['/tests']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Все тесты</a></li>
+            <li *ngIf='isLoggedIn'><a [routerLink]="['/userTestResults']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Результаты</a></li>
+        </ul>  
+      </li>  
+      <li><a>Медитация</a>
+        <ul>
+            <li><a [routerLink]="['/lessons']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Все уроки</a></li>
+            <li *ngIf='isLoggedIn'><a [routerLink]="['/mylessons']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Мои уроки</a></li>
+        </ul>  
+      </li> 
+      <li><a>Задания</a>
+        <ul>
+            <li><a [routerLink]="['/tasks']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Все задания</a></li>
+            <li *ngIf='isLoggedIn'><a [routerLink]="['/mytasks']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Мои задания</a></li>
+        </ul>  
+      </li> 
+      <li *ngIf='isLoggedIn'><a [routerLink]="['/dailyHealth']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Ежедневная статистика</a></li>  
+      <!-- <li *ngIf='isAdmin'><a [routerLink]="['/user']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Пользователи</a></li>   -->
+      
+      <li *ngIf='!isLoggedIn' class="SignInLiId"><button class="SignInButtonId" (click)='signInClick()'>Войти</button></li> 
+      <li *ngIf='isLoggedIn' class="SignInLiId"><button class="SignInButtonId" (click)='logout()'>Выйти</button></li>     
+      </ul>      
+    </div>            
+<div>
+
+<div *ngIf='isAdminEmail&&isLoggedIn' id="AdminNavigation">
+    <ul class="AdminNavigation">     
+      <li ><a [routerLink]="['/user']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Пользователи</a></li>  
+      <li ><a [routerLink]="['/listTask']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Задания пользователей</a></li>  
+      <li ><a [routerLink]="['/listLesson']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Уроки медитации пользователей</a></li>  
+      <li ><a [routerLink]="['/listTest']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}">Тесты пользователей</a></li>  
+    </ul>      
+</div>            
+<!-- 
+<div class="topnav">
+  <a [routerLink]="['/']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}"> HOME</a>
+    <a [routerLink]="['/lessons']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}"> Lessons</a>
+    <a [routerLink]="['/mylessons']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}" 
+    *ngIf='isLoggedIn'> Your Lessons</a>
+    <a [routerLink]="['/mylessons']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}" 
+    *ngIf='isLoggedIn'> Your finish Lessons</a>
+    <a [routerLink]="['/tasks']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}"> Tasks</a>
+    <a [routerLink]="['/mytasks']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}" 
+    *ngIf='isLoggedIn'> Your Tasks</a>
+    <a [routerLink]="['/tests']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}"> Tests</a>
+    <a [routerLink]="['/userTestResults']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}" 
+    *ngIf='isLoggedIn'> My test result</a>
+    <a [routerLink]="['/user']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}" 
+    *ngIf='isAdmin'> show all user</a>
+    <a [routerLink]="['/dailyHealth']" routerLinkActive='active' [routerLinkActiveOptions]="{ exact: true}" 
+    *ngIf='isLoggedIn'>Daily Health</a>
+
+  </div> -->
+  
+  <!-- <button *ngIf='!isLoggedIn&&!goSignIn&&!goSignUp' mat-flat-button color="primary" (click)='signInClick()'>Войти</button> -->
+  <div style="margin: 100px;" *ngIf='!isLoggedIn&&goSignIn&&!goSignUp'>
+    <div class="overlay">
+    <form>
+       <div class="con">
+       <header class="head-form">
+          <h2>Вход</h2>
+          <br>
+          <p>Вход по почтовому адресу и паролю</p>
+       </header>
+       <br>
+       <div class="field-set">        
+             <span class="input-item">
+               <i class="fa fa-user-circle"></i>
+             </span>
+             <input class="form-input" id="txt-input" type="text" placeholder="user@email.com" #email required>
+         <br>    
+          <input class="form-input" type="password" placeholder="password" id="pwd"  #password name="password" required>
+          <br>
+           <button class="log-in" (click)='login(email.value, password.value)'> Войти </button> 
+           <br>
+           <button (click)='goToRegistration()' > Регистрация</button>
+       </div>
+      </div>
+    </form>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+<ng-template [ngIf]="dailyStatusTest&&isLoggedIn">
+  <div id="panel">
+    <div id="hidden_panel">
+<div class="dailyStatusTestID">
+  <mat-card *ngIf='isLoggedIn'>
+      <div  *ngIf='dailyStatusMood'>
+        <p>Какое у вас настроение</p>
+        <br>
+        <button mat-flat-button color="primary" (click)="setDailyStatusMood('good')">Отличное</button>
+        <button mat-flat-button color="primary" (click)="setDailyStatusMood('average')">Нормальное</button>
+        <button mat-flat-button color="primary" (click)="setDailyStatusMood('bad')">Плохое</button>
+      </div >
+      <div *ngIf='dailyStatusPositive'>
+        <p>Какие эмоции сегодня преобладали</p>
+        <br>
+        <button mat-flat-button color="primary" (click)="setDailyStatusPositive('good')">Положительные</button>
+        <button mat-flat-button color="primary" (click)="setDailyStatusPositive('average')">Одинаково</button>
+        <button mat-flat-button color="primary" (click)="setDailyStatusPositive('bad')">Отрицательные</button>
+      </div >
+      <div *ngIf='dailyStatusHealth'>
+        <p>Как ваше самочувствие</p>
+        <br>
+        <button mat-flat-button color="primary" (click)="setDailyStatusHealth('good')">Отлично</button>
+        <button mat-flat-button color="primary" (click)="setDailyStatusHealth('average')">Средне</button>
+        <button mat-flat-button color="primary" (click)="setDailyStatusHealth('bad')">Плохо</button>
+      </div> 
+    </mat-card> 
+  </div>
+</div>
+</div>
+</ng-template>
+<ng-template [ngIf]="!dailyStatusTest&&isLoggedIn">
+  <div id="panel">
+    <div id="hidden_panel">
+ <img height="100px" width="100px" style="margin: 20px;" src="http://localhost:50096/images/smile.png"/>
+</div>
+</div>
+</ng-template>
+</body>
+</html>

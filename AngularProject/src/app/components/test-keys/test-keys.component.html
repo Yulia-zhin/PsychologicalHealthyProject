@@ -1,0 +1,16 @@
+<div style="height: 50px;"></div>
+
+<blockquote>
+    <cite>Ваш результат:</cite>
+    <p>{{getResult()}}</p>
+  </blockquote>
+  <ng-template [ngIf]="!saveFlag">
+  <a>
+    <button mat-flat-button color="primary" (click)='saveResult()'>сохранить результат</button>
+  </a>
+</ng-template>
+<ng-template [ngIf]="saveFlag">
+    <a>
+      <button mat-flat-button color="primary">Сохранено</button>
+    </a>
+  </ng-template>

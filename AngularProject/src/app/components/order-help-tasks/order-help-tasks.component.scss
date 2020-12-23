@@ -1,0 +1,77 @@
+blockquote {
+    margin: 30px 230px;
+    width: 700px;
+    background: #FFF4ED;
+    padding: 40px;
+    color: #3F484D;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    }
+    blockquote:before, blockquote:after {
+    font-size: 45px;
+    color: #3CA1D9;
+    position: absolute;
+    height: 2px;
+    left: 40px;
+    right: 40px;
+    line-height: .5;
+    background: linear-gradient(to right, #3CA1D9 45%, transparent 45%, transparent), linear-gradient(to right, transparent, transparent 55%, #3CA1D9 55%);
+    font-family: serif;
+    }
+    blockquote:before {
+    content: "\201C";
+    top: 30px;
+    }
+    blockquote:after {
+    content: "\201D";
+    bottom: 30px;
+    }
+    blockquote p {
+    font-size: 20px;
+    }
+    blockquote footer {
+    margin-bottom: 1em;
+    }
+    blockquote cite {
+    font-style: normal;
+    }
+
+
+    /////////
+
+    .button-3 {
+        margin-left: 100px;
+        display: inline-flex;
+        align-items: center;
+        font-size: 12px;
+        letter-spacing: .05em;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        font-family: 'Montserrat', sans-serif;
+        color: #904C6E;
+        background: white;
+        border: 1px solid;
+        cursor: pointer;
+        transition: .3s linear;
+    }
+    
+    .button-3:hover {
+        background: Cornsilk;
+    }
+    
+    .button-3:after {
+        font-family: Linearicons-Free;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 16px;
+        margin-left: 30px;
+        padding-left: 20px;
+        border-left: 1px solid;
+    }

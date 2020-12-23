@@ -1,0 +1,15 @@
+<div style="margin: 100px 300px;">
+<table class="table_col">
+    <colgroup>
+        <col style="background:#C7DAF0;">
+    </colgroup>
+    <tr>
+      <th>Уникальный идентификатор</th>
+      <th>Почта пользователя</th>
+      </tr>
+    <tr *ngFor="let p of users">
+        <td>{{p?.id}}</td>
+        <td>{{p?.email}}</td>
+        </tr>
+    </table> 
+</div>

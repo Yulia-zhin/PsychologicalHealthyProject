@@ -1,0 +1,89 @@
+.rounded {
+    counter-reset: li; 
+    list-style: none; 
+    font: 14px "Trebuchet MS", "Lucida Sans";
+    padding: 0;
+    }
+    .rounded a {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    margin: 2px 100px;
+    background: #f8f3ef;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: .3s ease-out;
+    }
+    .rounded a:hover {background: #E9E4E0;}
+    .rounded a:hover:before {transform: rotate(360deg);}
+    .rounded a:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: Azure;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+    }
+
+/////\
+////
+.older {
+    list-style: none;
+    margin: 0 auto;
+    width: 660px;
+  }
+  .older li {
+    border-bottom: dashed 1px #006699;
+    margin-top: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    padding: 5px;
+  }
+  .older a {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    line-height: 30px;
+    color: #3A3A3A;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .older a:before {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border: solid 1px #dedede;
+    margin-right: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 24px;
+    -webkit-transition: .4s linear;
+    transition: .4s linear;
+  }
+  .older a:hover:before {
+    color:#D72F2C;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .buttonfinish{
+    background: LightYellow;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    margin: 20px 200px;
+    height: 40px;
+    width: 200px;
+  }

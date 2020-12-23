@@ -1,0 +1,24 @@
+<p>test-answers works!</p>
+<table class="table table-striped" >
+    <thead>
+        <tr>
+            <td>id</td>
+            <td>text</td>
+            <td>mark</td>
+            <td>testQuestionsId</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let q of answers">
+                <td>{{q?.id}}</td>
+                <td>{{q?.text}}</td>
+                <td>{{q?.mark}}</td>
+                <td>{{q?.testQuestionsId}}</td>
+                <td>
+                    <!--<a [routerLink]="['answers', q?.id]"> выбрать</a>-->
+                    
+                </td>
+        </tr>
+    </tbody>
+</table>

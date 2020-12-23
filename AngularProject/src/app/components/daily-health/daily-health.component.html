@@ -1,0 +1,86 @@
+<body>
+<div style="height: 70px;">
+</div>
+<h2 style="margin-left: 100px;"> Графики ежедневного состояния  </h2>
+    
+<div id="divGrafID">
+                <h3>Настроение</h3>
+        <td *ngFor="let p of markMoodNumbers">
+            <svg *ngIf="p==1" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <circle cx="20" cy=90 r="3"
+                stroke="Red" stroke-width="3" fill="#ffff00" />                 
+            </svg>
+            <svg *ngIf="p==2" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <circle cx="20" cy=60 r="3"
+                stroke="Navy" stroke-width="3" fill="#ffff00" />                 
+            </svg>
+            <svg *ngIf="p==3" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <circle cx="20" cy=30 r="3"
+                stroke="DarkGreen" stroke-width="3" fill="#FFFFE0" />                 
+            </svg>
+        </td>
+    </div>
+
+<div id="divGrafID">
+     <h3>Здоровье</h3>
+        <td *ngFor="let p of markHealthNumbers">
+            <svg *ngIf="p==1" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+                <circle cx="50" cy=90 r="3"
+                stroke="Red" stroke-width="3" fill="#FFFFE0" />                 
+            </svg>
+            <svg *ngIf="p==2" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+                <circle cx="50" cy=60 r="3"
+                stroke="Navy" stroke-width="3" fill="#FFFFE0" />                 
+            </svg>
+            <svg *ngIf="p==3" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+                <circle cx="50" cy=30 r="3"
+                stroke="DarkGreen" stroke-width="3" fill="#FFFFE0" />                 
+            </svg>
+        </td>
+</div>
+
+<div id="divGrafID">
+    <h3>Эмоции</h3>
+        <td *ngFor="let p of markPosiviteNumbers">
+            <svg *ngIf="p==1" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+                <circle cx="50" cy=90 r="3"
+                stroke="Red" stroke-width="3" fill="#FFFFE0" />                 
+            </svg>
+            <svg *ngIf="p==2" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+                <circle cx="50" cy=60 r="3"
+                stroke="Navy" stroke-width="3" fill="#FFFFE0" />                 
+            </svg>
+            <svg *ngIf="p==3" 
+            xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
+                <circle cx="50" cy=30 r="3"
+                stroke="DarkGreen" stroke-width="3" fill="#FFFFE0" />                 
+            </svg>
+        </td>
+</div> 
+<div style="margin: 20px 300px;">
+<table class="table_col" >
+    <colgroup>
+        <col style="background: MistyRose; color: B;">
+    </colgroup>
+    <tr>
+      <th>Дата</th>
+      <th>Настроение</th>
+      <th>Здоровье</th>
+      <th>Эмоции</th>
+      </tr>
+    <tr *ngFor="let p of dailyHealthList">
+        <td>{{p?.dataDay}}</td>
+        <td>{{p?.markMood}}</td>
+        <td>{{p?.markHealth}}</td>
+        <td>{{p?.markPositive}}</td>
+      </tr>
+ </table>
+</div>
